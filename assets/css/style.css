@@ -2473,7 +2473,7 @@ hr {
     .logoimg {
         max-width: 27%;
     }
-    
+
 }
 
 
@@ -2626,7 +2626,7 @@ section {
 
 .header-area .main-header {
     padding: 0px 40px;
-}     
+}
 
 @media only screen and (min-width: 1200px) and (max-width: 1600px) {
     .header-area .main-header {
@@ -2664,7 +2664,7 @@ section {
     .logoimg {
         min-width: 20% !important;
     }
-    
+
 }*/
 
 @media only screen and (min-width: 300px) and (max-width: 575px) {
@@ -2968,12 +2968,18 @@ section {
 }
 
 .slider-area {
-    margin-top: -1px;
-    background-image: url("https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjE5rMx27a25_viOOhdFKuCdnfFdNXslxxg2VYPphOCcqGNhqGtZD_-vBFA_tCqquynxaIOhLy_lxcvHoP3Br3hC9aQzoMxyyteKACuNps2N703JSMWJYfQ1AhEsxfE7PVrbgUUM2jUgodAb97VJDWLnrE-m0hTqvrL_nAzPMpefY7nADOfEAbWUhvnrcQ/s2540/Header.webp");
-    background-repeat: no-repeat;
-    background-position: top center;
-    background-size: cover;
-    background-attachment: fixed
+    position: relative;
+    overflow: hidden;
+}
+
+.bg-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 0;
 }
 
 .container-1{
