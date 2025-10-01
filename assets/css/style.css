@@ -2714,7 +2714,7 @@ section {
     content: "";
     width: 14px;
     height: 1px;
-    background: #d19f68;
+    background: #000000;
     left: 25px;
     bottom: 33px;
     transform: rotate(-46deg);
@@ -2737,7 +2737,7 @@ section {
     content: "";
     width: 14px;
     height: 1px;
-    background: #d19f68;
+    background: #000000;
     left: 57px;
     top: 37px;
     transform: rotate(-46deg);
@@ -2756,7 +2756,7 @@ section {
 }
 
 .header-area .main-header .main-menu ul li.active>a {
-    color: #d19f68
+    color: #000000
 }
 
 .header-area .main-header .main-menu ul li.active>a::before {
@@ -2770,7 +2770,7 @@ section {
 }
 
 .header-area .main-header .main-menu ul li:hover>a {
-    color: #d19f68
+    color: #000000
 }
 
 .header-area .main-header .main-menu ul li:hover>a::before {
@@ -2843,7 +2843,7 @@ section {
 }
 
 .header-sticky.sticky-bar {
-    background: #000
+    background: #d19f68
 }
 
 .header-sticky.sticky-bar.sticky .main-menu ul li a {
@@ -3540,7 +3540,7 @@ section {
 }
 
 .services-caption:hover .service-icon i {
-    background: #d19f68
+    background: #000000
 }
 
 .best-pricing {
