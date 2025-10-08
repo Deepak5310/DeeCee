@@ -1,664 +1,1140 @@
-<!doctype html>
-<html class="no-js" lang="zxx">
-
+<!DOCTYPE html>
+<html lang="en">
 <head>
-    <meta charset="utf-8">
-    <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>DEECEE</title>
-    <meta name="description" content="">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="manifest" href="site.webmanifest">
-    <link rel="shortcut icon" type="image/x-icon" href="assets/img/logo/JPG LOGO.jpg">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Premium Hair Extensions & Hair Patches - Transform your look with our luxury collection of natural hair extensions, patches, and accessories.">
+    <meta name="keywords" content="hair extensions, hair patches, clip-ins, premium hair, hair transformation">
+    <title>LuxeHair - Premium Hair Extensions & Patches</title>
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-    <!-- CSS here -->
-    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
-    <link rel="stylesheet" href="assets/css/owl.carousel.min.css">
-    <link rel="stylesheet" href="assets/css/slicknav.css">
-    <link rel="stylesheet" href="assets/css/flaticon.css">
-    <link rel="stylesheet" href="assets/css/gijgo.css">
-    <link rel="stylesheet" href="assets/css/animate.min.css">
-    <link rel="stylesheet" href="assets/css/animated-headline.css">
-    <link rel="stylesheet" href="assets/css/magnific-popup.css">
-    <link rel="stylesheet" href="assets/css/fontawesome-all.min.css">
-    <link rel="stylesheet" href="assets/css/themify-icons.css">
-    <link rel="stylesheet" href="assets/css/slick.css">
-    <link rel="stylesheet" href="assets/css/nice-select.css">
-    <link rel="stylesheet" href="assets/css/style.css">
+        :root {
+            --primary-beige: #F5E6D3;
+            --soft-gold: #D4AF37;
+            --blush: #F4C2C2;
+            --soft-brown: #8B7355;
+            --cream: #FFF8F0;
+            --text-dark: #3A3A3A;
+            --text-light: #666666;
+            --white: #FFFFFF;
+            --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--text-dark);
+            background: var(--white);
+            overflow-x: hidden;
+        }
+
+        /* Announcement Bar */
+        .announcement-bar {
+            background: linear-gradient(135deg, var(--soft-gold), var(--blush));
+            color: var(--white);
+            text-align: center;
+            padding: 10px;
+            position: relative;
+            overflow: hidden;
+            font-size: 14px;
+            font-weight: 500;
+        }
+
+        .announcement-slider {
+            display: flex;
+            animation: slide 15s infinite;
+        }
+
+        .announcement-item {
+            min-width: 100%;
+            padding: 0 20px;
+        }
+
+        @keyframes slide {
+            0%, 33% { transform: translateX(0); }
+            34%, 66% { transform: translateX(-100%); }
+            67%, 100% { transform: translateX(-200%); }
+        }
+
+        /* Header */
+        header {
+            background: var(--white);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            transition: var(--transition);
+        }
+
+        .header-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 30px;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--soft-brown);
+            text-decoration: none;
+        }
+
+        .logo-icon {
+            width: 40px;
+            height: 40px;
+            margin-right: 10px;
+            background: linear-gradient(135deg, var(--soft-gold), var(--blush));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--white);
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 35px;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: var(--text-dark);
+            font-weight: 500;
+            position: relative;
+            transition: var(--transition);
+        }
+
+        nav a:hover {
+            color: var(--soft-gold);
+        }
+
+        nav a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--soft-gold);
+            transition: var(--transition);
+        }
+
+        nav a:hover::after {
+            width: 100%;
+        }
+
+        .dropdown {
+            position: relative;
+        }
+
+        .dropdown-content {
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background: var(--white);
+            min-width: 200px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            border-radius: 8px;
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(-10px);
+            transition: var(--transition);
+            margin-top: 15px;
+        }
+
+        .dropdown:hover .dropdown-content {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+
+        .dropdown-content a {
+            display: block;
+            padding: 12px 20px;
+            color: var(--text-dark);
+            border-bottom: 1px solid var(--primary-beige);
+        }
+
+        .dropdown-content a:last-child {
+            border-bottom: none;
+        }
+
+        .header-icons {
+            display: flex;
+            gap: 20px;
+        }
+
+        .icon-btn {
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 8px;
+            transition: var(--transition);
+            position: relative;
+        }
+
+        .icon-btn:hover {
+            transform: scale(1.1);
+        }
+
+        .icon-btn svg {
+            width: 24px;
+            height: 24px;
+            stroke: var(--text-dark);
+            fill: none;
+            stroke-width: 2;
+        }
+
+        .mobile-menu-btn {
+            display: none;
+        }
+
+        /* Hero Section */
+        .hero {
+            position: relative;
+            height: 90vh;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .hero-video {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            min-width: 100%;
+            min-height: 100%;
+            transform: translate(-50%, -50%);
+            z-index: -1;
+            object-fit: cover;
+        }
+
+        .hero-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.3);
+            z-index: 0;
+        }
+
+        .hero-content {
+            text-align: center;
+            color: var(--white);
+            z-index: 1;
+            padding: 20px;
+            animation: fadeInUp 1s ease;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .hero h1 {
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            margin-bottom: 20px;
+            font-weight: 300;
+            letter-spacing: 2px;
+        }
+
+        .hero p {
+            font-size: clamp(1rem, 2vw, 1.3rem);
+            margin-bottom: 30px;
+            opacity: 0.95;
+        }
+
+        .btn-primary {
+            display: inline-block;
+            padding: 15px 40px;
+            background: linear-gradient(135deg, var(--soft-gold), var(--blush));
+            color: var(--white);
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 600;
+            transition: var(--transition);
+            box-shadow: 0 10px 30px rgba(212, 175, 55, 0.3);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 40px rgba(212, 175, 55, 0.4);
+        }
+
+        /* Section Base */
+        section {
+            padding: 80px 30px;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: clamp(2rem, 4vw, 3rem);
+            color: var(--text-dark);
+            margin-bottom: 50px;
+            font-weight: 300;
+            letter-spacing: 1px;
+        }
+
+        /* Top Picks Section */
+        .top-picks {
+            background: var(--cream);
+        }
+
+        .video-carousel {
+            display: flex;
+            gap: 20px;
+            overflow-x: auto;
+            scroll-behavior: smooth;
+            padding: 20px 0;
+            scrollbar-width: thin;
+            scrollbar-color: var(--soft-gold) var(--primary-beige);
+        }
+
+        .video-carousel::-webkit-scrollbar {
+            height: 8px;
+        }
+
+        .video-carousel::-webkit-scrollbar-track {
+            background: var(--primary-beige);
+            border-radius: 10px;
+        }
+
+        .video-carousel::-webkit-scrollbar-thumb {
+            background: var(--soft-gold);
+            border-radius: 10px;
+        }
+
+        .video-item {
+            flex: 0 0 auto;
+            width: 200px;
+            position: relative;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            transition: var(--transition);
+        }
+
+        .video-item:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+        }
+
+        .video-item video {
+            width: 100%;
+            height: 356px;
+            object-fit: cover;
+        }
+
+        .video-caption {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);
+            color: var(--white);
+            padding: 20px 15px 15px;
+            font-size: 14px;
+            font-weight: 500;
+        }
+
+        /* Collection Section */
+        .collection-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+        }
+
+        .product-card {
+            background: var(--white);
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+            transition: var(--transition);
+            cursor: pointer;
+        }
+
+        .product-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 40px rgba(0,0,0,0.12);
+        }
+
+        .product-image {
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+            transition: var(--transition);
+        }
+
+        .product-card:hover .product-image {
+            transform: scale(1.05);
+        }
+
+        .product-info {
+            padding: 20px;
+        }
+
+        .product-name {
+            font-size: 18px;
+            margin-bottom: 10px;
+            color: var(--text-dark);
+        }
+
+        .product-price {
+            font-size: 20px;
+            color: var(--soft-gold);
+            font-weight: 600;
+            margin-bottom: 15px;
+        }
+
+        .btn-secondary {
+            display: inline-block;
+            padding: 10px 25px;
+            background: transparent;
+            color: var(--soft-brown);
+            border: 2px solid var(--soft-brown);
+            text-decoration: none;
+            border-radius: 25px;
+            font-weight: 500;
+            transition: var(--transition);
+        }
+
+        .btn-secondary:hover {
+            background: var(--soft-brown);
+            color: var(--white);
+        }
+
+        /* Featured Product */
+        .featured-product {
+            background: var(--cream);
+        }
+
+        .featured-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            align-items: center;
+        }
+
+        .featured-image {
+            width: 100%;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.1);
+        }
+
+        .featured-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .featured-details h3 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            color: var(--text-dark);
+            font-weight: 300;
+        }
+
+        .featured-price {
+            font-size: 2rem;
+            color: var(--soft-gold);
+            margin-bottom: 20px;
+            font-weight: 600;
+        }
+
+        .options {
+            margin-bottom: 30px;
+        }
+
+        .options label {
+            display: block;
+            margin-bottom: 10px;
+            color: var(--text-dark);
+            font-weight: 500;
+        }
+
+        .option-buttons {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+
+        .option-btn {
+            padding: 8px 20px;
+            border: 2px solid var(--primary-beige);
+            background: var(--white);
+            border-radius: 20px;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .option-btn:hover,
+        .option-btn.active {
+            border-color: var(--soft-gold);
+            background: var(--soft-gold);
+            color: var(--white);
+        }
+
+        .featured-actions {
+            display: flex;
+            gap: 20px;
+        }
+
+        /* Transformations Section */
+        .transformations {
+            padding: 80px 30px;
+        }
+
+        .transformation-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+
+        .transformation-item {
+            position: relative;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+
+        .before-after {
+            position: relative;
+            width: 100%;
+            height: 400px;
+            overflow: hidden;
+        }
+
+        .before-after img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+
+        .slider-handle {
+            position: absolute;
+            top: 0;
+            left: 50%;
+            width: 4px;
+            height: 100%;
+            background: var(--soft-gold);
+            cursor: ew-resize;
+            z-index: 2;
+        }
+
+        .slider-handle::before {
+            content: '◀ ▶';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: var(--soft-gold);
+            color: var(--white);
+            padding: 10px;
+            border-radius: 50%;
+            font-size: 12px;
+            white-space: nowrap;
+        }
+
+        .after-image {
+            clip-path: inset(0 0 0 50%);
+        }
+
+        /* Footer */
+        footer {
+            background: var(--text-dark);
+            color: var(--white);
+            padding: 50px 30px 20px;
+            text-align: center;
+        }
+
+        .footer-content {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 30px;
+        }
+
+        .footer-section h4 {
+            margin-bottom: 20px;
+            color: var(--soft-gold);
+        }
+
+        .footer-section a {
+            color: var(--white);
+            text-decoration: none;
+            display: block;
+            margin-bottom: 10px;
+            transition: var(--transition);
+        }
+
+        .footer-section a:hover {
+            color: var(--soft-gold);
+        }
+
+        .footer-bottom {
+            padding-top: 20px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .header-container {
+                padding: 15px 20px;
+            }
+
+            nav ul {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                background: var(--white);
+                flex-direction: column;
+                padding: 20px;
+                box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            }
+
+            nav ul.active {
+                display: flex;
+            }
+
+            .mobile-menu-btn {
+                display: block;
+            }
+
+            .featured-container {
+                grid-template-columns: 1fr;
+            }
+
+            .transformation-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .video-carousel {
+                padding: 20px 0;
+            }
+
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .featured-actions {
+                flex-direction: column;
+            }
+
+            .collection-grid {
+                grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+                gap: 20px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            section {
+                padding: 40px 15px;
+            }
+
+            .video-item {
+                width: 150px;
+            }
+
+            .video-item video {
+                height: 267px;
+            }
+
+            .footer-content {
+                grid-template-columns: 1fr;
+                text-align: left;
+            }
+        }
+
+        /* Loading Animation */
+        .loading {
+            display: inline-block;
+            width: 50px;
+            height: 50px;
+            border: 3px solid var(--primary-beige);
+            border-radius: 50%;
+            border-top-color: var(--soft-gold);
+            animation: spin 1s ease-in-out infinite;
+        }
+
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+    </style>
 </head>
-
 <body>
-    <!-- ? Preloader Start -->
-    <div id="preloader-active">
-        <div class="preloader d-flex align-items-center justify-content-center">
-            <div class="preloader-inner position-relative">
-                <div class="preloader-circle"></div>
-                <div class="preloader-img pere-text">
-                    <img src="assets/img/logo/JPG LOGO.jpg" alt="">
-                </div>
-            </div>
+    <!-- Announcement Bar -->
+    <div class="announcement-bar">
+        <div class="announcement-slider">
+            <div class="announcement-item">Free Shipping on Orders Above ₹5000</div>
+            <div class="announcement-item">Premium Quality Hair Extensions</div>
+            <div class="announcement-item">Sign up and Get 5% OFF on Your 1st Order</div>
         </div>
     </div>
-    <!-- Preloader Start -->
-    <header>
-        <!--? Header Start -->
-        <div class="header-area header-transparent pt-1">
-            <div class="main-header header-sticky">
-                <div class="container-fluid">
-                    <div class="row align-items-center">
-                        <!-- Logo -->
-                        <div class="col-xl-2 col-lg-2 col-md-1 logoimg">
 
-                           <img src="assets/img/logo/PNG LOGO LARGE SIZE.png" class="setimg">
+    <!-- Header -->
+    <header id="header">
+        <div class="header-container">
+            <a href="#" class="logo">
+                <div class="logo-icon">✨</div>
+                LuxeHair
+            </a>
+            
+            <nav>
+                <ul id="nav-menu">
+                    <li class="dropdown">
+                        <a href="#">Shop</a>
+                        <div class="dropdown-content">
+                            <a href="#">Hair Extensions</a>
+                            <a href="#">Hair Patches</a>
+                            <a href="#">Clip-ins</a>
+                            <a href="#">Accessories</a>
                         </div>
-                        <div class="col-xl-10 col-lg-10 col-md-10">
-                            <div class="menu-main d-flex align-items-center justify-content-end">
-                                <!-- Main-menu -->
-                                <div class="main-menu f-right d-none d-lg-block">
-                                    <nav>
-                                        <ul id="navigation">
-                                            <li class="active"><a href="index.html">Home</a></li>
-                                            <li><a href="about.html">About</a></li>
-                                            <li><a href="Product.html">Product</a></li>
-                                            <li><a href="contact.html">Contact</a></li>
-                                        </ul>
-                                    </nav>
-                                </div>
+                    </li>
+                    <li><a href="#">Help Me</a></li>
+                    <li><a href="#">Book a Trial</a></li>
+                    <li><a href="#">Reviews</a></li>
+                    <li><a href="#">New Launch</a></li>
+                </ul>
+            </nav>
 
-                            </div>
-                        </div>
-                        <!-- Mobile Menu -->
-                        <div class="col-12">
-                            <div class="mobile_menu d-block d-lg-none"></div>
-                        </div>
-                    </div>
-                </div>
+            <div class="header-icons">
+                <button class="icon-btn mobile-menu-btn" onclick="toggleMenu()">
+                    <svg viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/>
+                    </svg>
+                </button>
+                <button class="icon-btn">
+                    <svg viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2M12 11a4 4 0 1 0 0-8 4 4 0 0 0 0 8z"/>
+                    </svg>
+                </button>
+                <button class="icon-btn">
+                    <svg viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/>
+                    </svg>
+                </button>
+                <button class="icon-btn">
+                    <svg viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17M17 13v8m0-8l2.293 2.293c.63.63.184 1.707-.707 1.707H5.5"/>
+                    </svg>
+                </button>
             </div>
         </div>
-        <!-- Header End -->
     </header>
-    <main>
-        <!--? slider Area Start-->
-        <div class="slider-area position-relative fix">
-            <!-- Background Video -->
-            <video autoplay muted loop playsinline class="bg-video">
-                <source src="assets/video/bg-video.mp4" type="video/mp4">
-                Your browser does not support HTML5 video.
-            </video>
 
-            <div class="slider-active">
-                <!-- Single Slider -->
-                <div class="single-slider slider-height d-flex align-items-center">
-                    <div class="container container-1">
-                        <div class="row">
-                            <div class="col-xl-8 col-lg-9 col-md-11 col-sm-10">
-                                <div class="hero__caption hero">
-                                    <span data-animation="fadeInUp" data-delay="0.2s" style="font-family: 'slick';">DEECEE</span>
-                                    <h1 data-animation="fadeInUp" data-delay="0.5s">Our Wig Hair Style make your look
-                                        elegance</h1>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- Single Slider -->
-                <div class="single-slider slider-height d-flex align-items-center">
-                    <div class="container container-1">
-                        <div class="row">
-                            <div class="col-xl-8 col-lg-9 col-md-11 col-sm-10">
-                                <div class="hero__caption hero">
-                                    <span data-animation="fadeInUp" data-delay="0.2s">DEECEE</span>
-                                    <h1 data-animation="fadeInUp" data-delay="0.5s">Our Wig Hair Style make your look
-                                        elegance</h1>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!-- stroke Text -->
-            <div class="stock-text">
-                <h2>Get More confident</h2>
-                <h2>Get More confident</h2>
-            </div>
-            <!-- Arrow -->
-
+    <!-- Hero Section -->
+    <section class="hero">
+        <video class="hero-video" autoplay loop muted playsinline>
+            <source src="https://cdn.coverr.co/videos/coverr-woman-with-long-hair-5916/1080p.mp4" type="video/mp4">
+        </video>
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <h1>Transform Your Beauty</h1>
+            <p>Premium Hair Extensions & Patches for Every Style</p>
+            <a href="#collection" class="btn-primary">Shop Now</a>
         </div>
-        <!-- slider Area End-->
-        <!--? About Area Start -->
-        <section class="about-area section-padding30 position-relative">
-            <div class="container">
-                <div class="row align-items-center">
-                    <div class="col-lg-6 col-md-11">
-                        <!-- about-img -->
-                        <div class="about-img ">
-                            <img src="assets/img/gallery/wiggs1.png" alt="">
-                        </div>
-                    </div>
-                    <div class="col-lg-6 col-md-12">
-                        <div class="about-caption">
-                            <!-- Section Tittle -->
-                            <div class="section-tittle section-tittle3 mb-35">
-                                <span>About Our company</span>
-                                <p>100% Natural Human Hair Extension & Wigs Manufacture, Wholesale Supplier & Exporter</p>
-                            </div>
-                            <p class="mb-30 pera-bottom">DEECEE Hair invites you to a world where extensions become an extension of spirit, a source of confidence. Imagine this: Beautiful
-                                locks that move with your every step, adding a touch of confidence to your every look. No Tangles, No Shedding, just 100%
-                                Natural Remy Human Hair that add beauty to your look.
-                            </p>
-                            <p class="mb-30 pera-bottom">At DEECEE HAIR, We turn this dream into reality, not with synthetic
-                                imitations, but with the finest, ethically sourced Temple Remy Human Hairs.
-                            </p>
+    </section>
 
-                        </div>
-                    </div>
+    <!-- Top Picks Section -->
+    <section class="top-picks">
+        <div class="container">
+            <h2 class="section-title">Top Picks For You</h2>
+            <div class="video-carousel" id="videoCarousel">
+                <!-- Video Items -->
+                <div class="video-item">
+                    <video autoplay loop muted playsinline>
+                        <source src="https://cdn.coverr.co/videos/coverr-woman-with-curly-hair-7641/1080p.mp4" type="video/mp4">
+                    </video>
+                    <div class="video-caption">Curly Extensions</div>
+                </div>
+                <div class="video-item">
+                    <video autoplay loop muted playsinline>
+                        <source src="https://cdn.coverr.co/videos/coverr-woman-with-straight-hair-2834/1080p.mp4" type="video/mp4">
+                    </video>
+                    <div class="video-caption">Straight Silk</div>
+                </div>
+                <div class="video-item">
+                    <video autoplay loop muted playsinline>
+                        <source src="https://cdn.coverr.co/videos/coverr-woman-with-blonde-hair-9472/1080p.mp4" type="video/mp4">
+                    </video>
+                    <div class="video-caption">Blonde Waves</div>
+                </div>
+                <div class="video-item">
+                    <video autoplay loop muted playsinline>
+                        <source src="https://cdn.coverr.co/videos/coverr-woman-with-red-hair-3615/1080p.mp4" type="video/mp4">
+                    </video>
+                    <div class="video-caption">Auburn Beauty</div>
+                </div>
+                <div class="video-item">
+                    <video autoplay loop muted playsinline>
+                        <source src="https://cdn.coverr.co/videos/coverr-woman-with-brown-hair-4928/1080p.mp4" type="video/mp4">
+                    </video>
+                    <div class="video-caption">Natural Brown</div>
+                </div>
+                <div class="video-item">
+                    <video autoplay loop muted playsinline>
+                        <source src="https://cdn.coverr.co/videos/coverr-woman-with-black-hair-8251/1080p.mp4" type="video/mp4">
+                    </video>
+                    <div class="video-caption">Midnight Black</div>
                 </div>
             </div>
-            <!-- About Shape -->
-            <div class="about-shape">
-                <img src="assets/img/gallery/about-shape.png" alt="">
-            </div>
-        </section>
-        <!-- About-2 Area End -->
-        <!--? Services Area Start -->
-        <section class="service-area pb-100">
-            <div class="container">
-                <!-- Section Tittle -->
-                <div class="row d-flex justify-content-center">
-                    <div class="col-xl-7 col-lg-8 col-md-11 col-sm-11">
-                        <div class="section-tittle text-center mb-90">
-                            <span>Professional Product</span>
-                            <h2 class="h2style">Our Best product that we offering to you</h2>
-                        </div>
+        </div>
+    </section>
+
+    <!-- Collection Section -->
+    <section id="collection">
+        <div class="container">
+            <h2 class="section-title">Our Collection</h2>
+            <div class="collection-grid">
+                <div class="product-card">
+                    <img src="https://images.unsplash.com/photo-1522336572468-97b06e8ef143?w=400" alt="Product" class="product-image" loading="lazy">
+                    <div class="product-info">
+                        <h3 class="product-name">Premium Clip-In Extensions</h3>
+                        <p class="product-price">₹4,999</p>
+                        <a href="#" class="btn-secondary">Shop Now</a>
                     </div>
                 </div>
-                <!-- Section caption -->
-                <div class="row">
-                    <div class="col-xl-4 col-lg-4 col-md-6">
-                        <div class="services-caption text-center mb-30">
-                            <h4 class="h4style"><a href="#">Lace Closure Wig</a></h4>
-                            <div class="boxes">
-                                <img src="assets/img/gallery/LACE CLOSURE WIG 4x4_.jpg" class="imgstyle">
-                            </div>
-                            <div class="service-cap">
-                                <p><b>Base:</b>Swiss, Silk, Monofilament, Semi HD, Full HD</p>
-                               <p><b> Weight:</b> Middle, Side, No Parts</p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-xl-4 col-lg-4 col-md-6">
-                        <div class="services-caption text-center mb-30">
-                            <h4 class="h4style"><a href="#">Crown / Scalp Topper</a></h4>
-                            <div class="boxes">
-                                <img src="assets/img/gallery/SCALP TOPPER or CROWN TOPPER or FEMALE TOPPER.jpg" class="imgstyle3">
-                            </div>
-                            <div class="service-cap">
-                                <p><b>Type:</b> 1”x3”, 1.5”x3”, 2”x3”, 2”x5”, 2”x6”, 3”x5”, 4”x4”, 5”x5”, 6”x8”, 7”x9”, 7”x10”</p>
-                                <p><b>Parting:</b> Middle, Side, No Parts</p>
-
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-xl-4 col-lg-4 col-md-6">
-                        <div class="services-caption active text-center mb-30">
-                            <h4 class="h4style"><a href="#">Lace Frontal Wig</a></h4>
-                            <div class="boxes">
-                                <img src="assets/img/gallery/Curly Wig (2).jpg" class="imgstyle">
-                            </div>
-                            <div class="service-cap">
-                                <p><b>Base:</b> Swiss, Silk, Monofilament, HD</p>
-                                <br>
-                                <p><b>Weight :</b> 135-335 Grams/each
-
-                                </p>
-                            </div>
-                        </div>
+                <div class="product-card">
+                    <img src="https://images.unsplash.com/photo-1492106087820-71f1a00d2b11?w=400" alt="Product" class="product-image" loading="lazy">
+                    <div class="product-info">
+                        <h3 class="product-name">Natural Hair Patches</h3>
+                        <p class="product-price">₹6,999</p>
+                        <a href="#" class="btn-secondary">Shop Now</a>
                     </div>
                 </div>
-            </div>
-        </section>
-        <!-- Product Area End -->
-        <!--? Team Start -->
-        <div class="team-area pb-180">
-            <div class="container">
-                <!-- Section Tittle -->
-                <div class="row justify-content-center">
-                    <div class="col-xl-8 col-lg-8 col-md-11 col-sm-11">
-                        <div class="section-tittle text-center mb-100">
-
-                        </div>
+                <div class="product-card">
+                    <img src="https://images.unsplash.com/photo-1519699047748-de8e457a634e?w=400" alt="Product" class="product-image" loading="lazy">
+                    <div class="product-info">
+                        <h3 class="product-name">Tape-In Extensions</h3>
+                        <p class="product-price">₹8,499</p>
+                        <a href="#" class="btn-secondary">Shop Now</a>
                     </div>
                 </div>
-                <div class="row team-active dot-style">
-                    <!-- single Tem -->
-                    <div class="col-xl-4 col-lg-4 col-md-6 col-sm-">
-                        <div class="single-team mb-80 text-center">
-                            <div class="team-img">
-                                <img src="assets/img/gallery/CLIP INS HAIR EXTENSIONS (2).jpg" class="radious">
-                            </div>
-                            <div class="team-caption">
-                                <span>CLIP INS HAIR</span>
-                                <h3><a href="#">(40 cm – 65 cm)</a></h3>
-                            </div>
-                        </div>
+                <div class="product-card">
+                    <img src="https://images.unsplash.com/photo-1560869713-7d0a29430803?w=400" alt="Product" class="product-image" loading="lazy">
+                    <div class="product-info">
+                        <h3 class="product-name">Keratin Bond Extensions</h3>
+                        <p class="product-price">₹12,999</p>
+                        <a href="#" class="btn-secondary">Shop Now</a>
                     </div>
-                    <div class="col-xl-4 col-lg-4 col-md-6 col-sm-">
-                        <div class="single-team mb-80 text-center">
-                            <div class="team-img">
-                                <img src="assets/img/gallery/wigexp.jpg" class="radious">
-                            </div>
-                            <div class="team-caption">
-                                <span>LACE CLOSURE</span>
-                                <h3><a href="#">(30 cm – 85 cm)</a></h3>
-                            </div>
-                        </div>
+                </div>
+                <div class="product-card">
+                    <img src="https://images.unsplash.com/photo-1470259078422-826894b933aa?w=400" alt="Product" class="product-image" loading="lazy">
+                    <div class="product-info">
+                        <h3 class="product-name">Halo Extensions</h3>
+                        <p class="product-price">₹7,499</p>
+                        <a href="#" class="btn-secondary">Shop Now</a>
                     </div>
-                    <div class="col-xl-4 col-lg-4 col-md-6 col-sm-">
-                        <div class="single-team mb-80 text-center">
-                            <div class="team-img">
-                                <img src="assets/img/gallery/stylishhairwigg.png" class="radious">
-                            </div>
-                            <div class="team-caption">
-                                <span>MACHINE WEFT</span>
-                                <h3><a href="#">(20 cm – 85 cm)</a></h3>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-xl-4 col-lg-4 col-md-6 col-sm-">
-                        <div class="single-team mb-80 text-center">
-                            <div class="team-img">
-                                <img src="assets/img/gallery/VIRGIN REMY RAW BULK HAIR BUNDLES (4).JPG" class="radious">
-                            </div>
-                            <div class="team-caption">
-                                <span>VIRGIN REMY RAW BULK </span>
-                                <h3><a href="#">(20 cm – 90 cm)</a></h3>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-xl-4 col-lg-4 col-md-6 col-sm-">
-                        <div class="single-team mb-80 text-center">
-                            <div class="team-img">
-                                <img src="assets/img/gallery/LACE FRONTAL - CURLY.jpg" class="radious">
-                            </div>
-                            <div class="team-caption">
-                                <span>LACE FRONTAL</span>
-                                <h3><a href="#">(20 cm – 70 cm)</a></h3>
-                            </div>
-                        </div>
+                </div>
+                <div class="product-card">
+                    <img src="https://images.unsplash.com/photo-1527799820374-dcf8d9d4a388?w=400" alt="Product" class="product-image" loading="lazy">
+                    <div class="product-info">
+                        <h3 class="product-name">Micro Ring Extensions</h3>
+                        <p class="product-price">₹9,999</p>
+                        <a href="#" class="btn-secondary">Shop Now</a>
                     </div>
                 </div>
             </div>
         </div>
-        </div>
-        </div>
-        <!-- Team End -->
-        <!-- Best Pricing Area Start -->
-        <div class="best-pricing section-padding2 position-relative">
-            <div class="container">
-                <div class="row justify-content-end">
-                    <div class="col-xl-7 col-lg-7">
-                        <div class="section-tittle mb-50">
-                            <span>Our Best Facility</span>
-                            <h2>We Provide Best Products</h2>
-                        </div>
-                        <!-- Pricing  -->
-                        <div class="row">
-                            <div class="col-lg-12 col-md-12 col-sm-12">
-                                <div class="pricing-list">
-                                    <ul>
-                                        <li>VIRGIN REMY RAW BULK HAIR BUNDLES . . . . . . .  . . . . . . . . . . . . . . . . . . . . . . . . . . . .  . . . . . . . . . . . . . . . . <span>(8”-36” )</span></li>
-                                        <li>MACHINE WEFT BUNDLES . . . . . . .  . . . . . . . . . . . . . . . . . . . . . . . . . . . .  . . . . . . . . . . . . . . . . . . .. . . . . . . . . . .<span>(8”-34” )</span></li>
-                                        <li>LACE CLOSURE . . . . . . .  . . . . . . . . . . . . . . . . . . . . . . . . . . . .  . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .<span>(8”-28” )</span></li>
-                                        <li>LACE FRONTAL . . . . . . .  . . . . . . . . . . . . . . . . . . . . . . . . . . . .  . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .<span>(8”-28”)</span></li>
-                                        <li> CLIP INS HAIR EXTENSIONS . . . . . . .  . . . . . . . . . . . . . . . . . . . . . . . . . . . .  . . . . . . . . . . . . . . . . . . . . . . . . . . . <span>(16”-26”)</span></li>
-                                        <li>LACE CLOSURE WIG . . . . . . .  . . . . . . . . . . . . . . . . . . . . . . . . . . . .  . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . <span>(12”-34”)</span></li>
-                                        <li>LACE FRONTAL WIG . . . . . . .  . . . . . . . . . . . . . . . . . . . . . . . . . . . .  . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .<span>(14”-34”)</span></li>
-                                        <li>SCALP TOPPER or CROWN TOPPER or FEMALE TOPPER or VOLUME TOPPER . . . . . . . . . . . . . . . . . . . . . . <span>(12”-24”)</span></li>
-                                    </ul>
-                                </div>
-                            </div>
+    </section>
 
-                        </div>
-                    </div>
+    <!-- Featured Product Section -->
+    <section class="featured-product">
+        <div class="container">
+            <h2 class="section-title">Most Loved Product Of The Month</h2>
+            <div class="featured-container">
+                <div class="featured-image">
+                    <img src="https://images.unsplash.com/photo-1562322140-8baeececf3df?w=600" alt="Featured Product" loading="lazy">
                 </div>
-            </div>
-            <!-- pricing img -->
-            <div class="pricing-img">
-                <img class="pricing-img1" src="assets/img/gallery/SCALP TOPPER or CROWN TOPPER or FEMALE TOPPER.jpg" alt="">
-                <img class="pricing-img2" src="assets/img/gallery/CLIP INS HAIR EXTENSIONS (2).jpg" alt="">
-            </div>
-        </div>
-        <!-- Best Pricing Area End -->
-        <!--? Gallery Area Start -->
-        <div class="gallery-area section-padding30">
-            <div class="container">
-                <!-- Section Tittle -->
-                <div class="row justify-content-center">
-                    <div class="col-xl-6 col-lg-7 col-md-9 col-sm-10">
-                        <div class="section-tittle text-center mb-100">
-                            <span>Our Image Gallary</span>
-                            <h2 class="h2style">some images from our collection</h2>
+                <div class="featured-details">
+                    <h3>Luxury Remy Hair Extensions</h3>
+                    <p class="featured-price">₹15,999</p>
+                    <p>Experience the ultimate in hair luxury with our 100% Remy human hair extensions. Silky smooth, tangle-free, and available in multiple shades.</p>
+                    
+                    <div class="options">
+                        <label>Select Length:</label>
+                        <div class="option-buttons">
+                            <button class="option-btn">16"</button>
+                            <button class="option-btn active">18"</button>
+                            <button class="option-btn">20"</button>
+                            <button class="option-btn">22"</button>
                         </div>
                     </div>
-                </div>
-                <div class="row">
-                    <div class="col-lg-4 col-md-6 col-sm-6">
-                        <div class="box snake mb-30">
-                            <div class="gallery-img " style="background-image: url(assets/img/gallery/wiggs.1.jpg);">
-                            </div>
-                            <div class="overlay"></div>
+                    
+                    <div class="options">
+                        <label>Select Weight:</label>
+                        <div class="option-buttons">
+                            <button class="option-btn">100g</button>
+                            <button class="option-btn active">150g</button>
+                            <button class="option-btn">200g</button>
                         </div>
                     </div>
-                    <div class="col-lg-8 col-md-6 col-sm-6">
-                        <div class="box snake mb-30">
-                            <div class="gallery-img " style="background-image: url(assets/img/gallery/CLIP\ INS\ HAIR\ EXTENSIONS\ \(6\).jpg);">
-                            </div>
-                            <div class="overlay"></div>
-                        </div>
-                    </div>
-                    <div class="col-lg-8 col-md-6 col-sm-6">
-                        <div class="box snake mb-30">
-                            <div class="gallery-img " style="background-image: url(assets/img/gallery/wiggs.3.jpeg);">
-                            </div>
-                            <div class="overlay"></div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 col-md-6 col-sm-6">
-                        <div class="box snake mb-30">
-                            <div class="gallery-img " style="background-image: url(assets/img/gallery/wiggs.4.png);">
-                            </div>
-                            <div class="overlay"></div>
-                        </div>
+                    
+                    <div class="featured-actions">
+                        <a href="#" class="btn-primary">Add to Cart</a>
+                        <a href="#" class="btn-secondary">View Details</a>
                     </div>
                 </div>
             </div>
         </div>
-        <!-- Gall
-         Cut Details Start -->
-        <div class="cut-details section-bg section-padding2"
-            data-background="https://i.pinimg.com/originals/d8/87/b8/d887b8b0f914b7a823a60801beb8109e.jpg">
-            <div class="container">
-                <div class="cut-active dot-style">
-                    <div class="single-cut">
-                        <div class="cut-icon mb-20">
-                            <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
-                                width="50px" height="50px">
-                                <image x="0px" y="0px" width="50px" height="50px"
-                                    xlink:href="data:img/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAQAAAC0NkA6AAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAAAmJLR0QA/4ePzL8AAAAHdElNRQfkBQ4MDDIERuyfAAADc0lEQVRYw7WYXWxTZRjH/+e0ikhh7QgfiYJZZ7bhBC6mU0LQ6DBADNGYLEaNJGpi4jTEQczYjQG8EL2ThAUTvTRGBwmECyBA+XRKHJpUL1yXFseWbe1ixgZCSAg/Lmo9bXe+up0+/5vT//Oc9/ee8z7nqwbyGbVqUL2iiuiurmtMKf2tu/52DXtW1OhVtekFRZTSkCY1rYcV0VI1arl+VULH9JvnGLhpHT/wD728z+M22QVs5ksyJOlkgds4zqlWEgzSQQ3uEzF4ju8ZpZsHK4NEOcgo7xL2AFhq4CgDtPmHPEWGg0R9AwrayjD77CY2s/RtsrRXDMhrCSc5wyIvyE6GaJ4lQogQB/idZW6QjxlkxRwQee0lWdoupec0a9uqlauHM8VrYyXqyLIuEIQIcYLPZ0JC/EJnQIh8C4xYDV0wO0hgBAgRm0kxrxhSS46mQBFCHKa7GLKbbwNHiCayRAqQCBMBdVW5etlRgGzjWFUQYgMDGHnIaZfbSIxTWNFP3MGzl0GaViQWMVXoAhv9SGn0O3hO+oLPkHiZ4y5FacrD3nPSJn5GptbrJ7+P+VnERa3VA6bWKFlFyC0NqdFUXOkqQqS06kwt1XhVIeNaZiqqSZeS0z4955jWwrBCuudSskvSRklSTDEXzznuaJ74l/m+rt4Wm3Zt8WxhcYAOU5Na7OuwJ3165RHTlKlhrfQFaZckXfH0ymOFhsNKaZX6POYSU7v2SZJ6XTz7aFJKbKfH9ZxuLLp9pIk5evaKM4ZMndXzrjOJ/7+V0Uv/rYKdZx9tOi8Jg3HqPY+kn66iGdt59jrMe/nnyX52V+mhVcsNFuchLWQqeH+vRB9xCBVeJC7xZhUQYTKstyBb+JNQ4JB3OJvfKhgJPggYEeEaz5ZCmpgI4H2+WD18Xdi2zG4uBbj8r5GxvtUs2+AE+wNCrCZHq/W7OBUlya4AEI9yjbeKnfL0VbrmiIgzyCelXnnJI/zBV3NYm6cZoaPcnVkW4yQXZtVpBp1keWVmxq7YpIsc2ys8nmbOc5k6u5zTLqtIkOQNn/eBer4hx4eY9nm3XbdwkTSfun67PEQ7R8ixh1rnKsPj/64WbdPrmtI5XdGAruqGrmu+IlquBj2hDXpGl/WdDumm2yBeEEky9KRe1Go16jFFFNVt3dSEUvpLfbqgae8B7gNdcvnkrRzZ4gAAAABJRU5ErkJggg==" />
-                            </svg>
-                        </div>
-                        <div class="cut-descriptions">
-                            <p>Single Donor Hairs, Single & Double Drawn Hair Bundle, Directly sourced from Indian
-                                Temples, Crafted & finished by highly skilled workers.
-                        </p>
-                        <p>Texture: Natural Black/ Brown</p>
-                        <p>Weight: Kilograms</p>
-                            <span>VIRGIN REMY RAW BULK HAIR BUNDLES</span>
-                        </div>
-                    </div>
-                    <div class="single-cut">
-                        <div class="cut-icon mb-20">
-                            <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
-                                width="50px" height="50px">
-                                <image x="0px" y="0px" width="50px" height="50px"
-                                    xlink:href="data:img/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAQAAAC0NkA6AAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAAAmJLR0QA/4ePzL8AAAAHdElNRQfkBQ4MDDIERuyfAAADc0lEQVRYw7WYXWxTZRjH/+e0ikhh7QgfiYJZZ7bhBC6mU0LQ6DBADNGYLEaNJGpi4jTEQczYjQG8EL2ThAUTvTRGBwmECyBA+XRKHJpUL1yXFseWbe1ixgZCSAg/Lmo9bXe+up0+/5vT//Oc9/ee8z7nqwbyGbVqUL2iiuiurmtMKf2tu/52DXtW1OhVtekFRZTSkCY1rYcV0VI1arl+VULH9JvnGLhpHT/wD728z+M22QVs5ksyJOlkgds4zqlWEgzSQQ3uEzF4ju8ZpZsHK4NEOcgo7xL2AFhq4CgDtPmHPEWGg0R9AwrayjD77CY2s/RtsrRXDMhrCSc5wyIvyE6GaJ4lQogQB/idZW6QjxlkxRwQee0lWdoupec0a9uqlauHM8VrYyXqyLIuEIQIcYLPZ0JC/EJnQIh8C4xYDV0wO0hgBAgRm0kxrxhSS46mQBFCHKa7GLKbbwNHiCayRAqQCBMBdVW5etlRgGzjWFUQYgMDGHnIaZfbSIxTWNFP3MGzl0GaViQWMVXoAhv9SGn0O3hO+oLPkHiZ4y5FacrD3nPSJn5GptbrJ7+P+VnERa3VA6bWKFlFyC0NqdFUXOkqQqS06kwt1XhVIeNaZiqqSZeS0z4955jWwrBCuudSskvSRklSTDEXzznuaJ74l/m+rt4Wm3Zt8WxhcYAOU5Na7OuwJ3165RHTlKlhrfQFaZckXfH0ymOFhsNKaZX6POYSU7v2SZJ6XTz7aFJKbKfH9ZxuLLp9pIk5evaKM4ZMndXzrjOJ/7+V0Uv/rYKdZx9tOi8Jg3HqPY+kn66iGdt59jrMe/nnyX52V+mhVcsNFuchLWQqeH+vRB9xCBVeJC7xZhUQYTKstyBb+JNQ4JB3OJvfKhgJPggYEeEaz5ZCmpgI4H2+WD18Xdi2zG4uBbj8r5GxvtUs2+AE+wNCrCZHq/W7OBUlya4AEI9yjbeKnfL0VbrmiIgzyCelXnnJI/zBV3NYm6cZoaPcnVkW4yQXZtVpBp1keWVmxq7YpIsc2ys8nmbOc5k6u5zTLqtIkOQNn/eBer4hx4eY9nm3XbdwkTSfun67PEQ7R8ixh1rnKsPj/64WbdPrmtI5XdGAruqGrmu+IlquBj2hDXpGl/WdDumm2yBeEEky9KRe1Go16jFFFNVt3dSEUvpLfbqgae8B7gNdcvnkrRzZ4gAAAABJRU5ErkJggg==" />
-                            </svg>
-                        </div>
-                        <div class="cut-descriptions">
-                            <p>Single Donor Hairs, Single & Double Drawn Bundles, Shedding & Tangle Free, No Split End, Eggs, Nits and Lice Free, Easy to Recolor or Dye.
-                            </p>
-                            <p>Texture: Natural Straight, Natural Wavy, Natural Curly, BW, DW, LW, WW, KC. KST</p>
-                            <p>Weight: 95-105 Grams/each</p>
-                            <span>MACHINE WEFT BUNDLES</span>
-                        </div>
-                    </div>
-                    <div class="single-cut">
-                        <div class="cut-icon mb-20">
-                            <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
-                                width="50px" height="50px">
-                                <image x="0px" y="0px" width="50px" height="50px"
-                                    xlink:href="data:img/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAQAAAC0NkA6AAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAAAmJLR0QA/4ePzL8AAAAHdElNRQfkBQ4MDDIERuyfAAADc0lEQVRYw7WYXWxTZRjH/+e0ikhh7QgfiYJZZ7bhBC6mU0LQ6DBADNGYLEaNJGpi4jTEQczYjQG8EL2ThAUTvTRGBwmECyBA+XRKHJpUL1yXFseWbe1ixgZCSAg/Lmo9bXe+up0+/5vT//Oc9/ee8z7nqwbyGbVqUL2iiuiurmtMKf2tu/52DXtW1OhVtekFRZTSkCY1rYcV0VI1arl+VULH9JvnGLhpHT/wD728z+M22QVs5ksyJOlkgds4zqlWEgzSQQ3uEzF4ju8ZpZsHK4NEOcgo7xL2AFhq4CgDtPmHPEWGg0R9AwrayjD77CY2s/RtsrRXDMhrCSc5wyIvyE6GaJ4lQogQB/idZW6QjxlkxRwQee0lWdoupec0a9uqlauHM8VrYyXqyLIuEIQIcYLPZ0JC/EJnQIh8C4xYDV0wO0hgBAgRm0kxrxhSS46mQBFCHKa7GLKbbwNHiCayRAqQCBMBdVW5etlRgGzjWFUQYgMDGHnIaZfbSIxTWNFP3MGzl0GaViQWMVXoAhv9SGn0O3hO+oLPkHiZ4y5FacrD3nPSJn5GptbrJ7+P+VnERa3VA6bWKFlFyC0NqdFUXOkqQqS06kwt1XhVIeNaZiqqSZeS0z4955jWwrBCuudSskvSRklSTDEXzznuaJ74l/m+rt4Wm3Zt8WxhcYAOU5Na7OuwJ3165RHTlKlhrfQFaZckXfH0ymOFhsNKaZX6POYSU7v2SZJ6XTz7aFJKbKfH9ZxuLLp9pIk5evaKM4ZMndXzrjOJ/7+V0Uv/rYKdZx9tOi8Jg3HqPY+kn66iGdt59jrMe/nnyX52V+mhVcsNFuchLWQqeH+vRB9xCBVeJC7xZhUQYTKstyBb+JNQ4JB3OJvfKhgJPggYEeEaz5ZCmpgI4H2+WD18Xdi2zG4uBbj8r5GxvtUs2+AE+wNCrCZHq/W7OBUlya4AEI9yjbeKnfL0VbrmiIgzyCelXnnJI/zBV3NYm6cZoaPcnVkW4yQXZtVpBp1keWVmxq7YpIsc2ys8nmbOc5k6u5zTLqtIkOQNn/eBer4hx4eY9nm3XbdwkTSfun67PEQ7R8ixh1rnKsPj/64WbdPrmtI5XdGAruqGrmu+IlquBj2hDXpGl/WdDumm2yBeEEky9KRe1Go16jFFFNVt3dSEUvpLfbqgae8B7gNdcvnkrRzZ4gAAAABJRU5ErkJggg==" />
-                            </svg>
-                        </div>
-                        <div class="cut-descriptions">
-                            <p>Fine Weaving, Standard Weaving, Suitable for all Skin Colours, Single Donor Hairs, Single & Double Drawn Hair Closure, Shedding & Tangle Free, No Split End, Eggs, Nits and Lice Free, Easy to Recolor or Dye.</p>
-                            <p>Texture: Natural Straight, Natural Wavy, Natural Curly, BW, DW, LW, WW, KC. KST</p>
-                            <p>Weight: 25-115 Grams/each</p>
-                            <span>LACE CLOSURE</span>
-                        </div>
-                    </div>
-                    <div class="single-cut">
-                        <div class="cut-icon mb-20">
-                            <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
-                                width="50px" height="50px">
-                                <image x="0px" y="0px" width="50px" height="50px"
-                                    xlink:href="data:img/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAQAAAC0NkA6AAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAAAmJLR0QA/4ePzL8AAAAHdElNRQfkBQ4MDDIERuyfAAADc0lEQVRYw7WYXWxTZRjH/+e0ikhh7QgfiYJZZ7bhBC6mU0LQ6DBADNGYLEaNJGpi4jTEQczYjQG8EL2ThAUTvTRGBwmECyBA+XRKHJpUL1yXFseWbe1ixgZCSAg/Lmo9bXe+up0+/5vT//Oc9/ee8z7nqwbyGbVqUL2iiuiurmtMKf2tu/52DXtW1OhVtekFRZTSkCY1rYcV0VI1arl+VULH9JvnGLhpHT/wD728z+M22QVs5ksyJOlkgds4zqlWEgzSQQ3uEzF4ju8ZpZsHK4NEOcgo7xL2AFhq4CgDtPmHPEWGg0R9AwrayjD77CY2s/RtsrRXDMhrCSc5wyIvyE6GaJ4lQogQB/idZW6QjxlkxRwQee0lWdoupec0a9uqlauHM8VrYyXqyLIuEIQIcYLPZ0JC/EJnQIh8C4xYDV0wO0hgBAgRm0kxrxhSS46mQBFCHKa7GLKbbwNHiCayRAqQCBMBdVW5etlRgGzjWFUQYgMDGHnIaZfbSIxTWNFP3MGzl0GaViQWMVXoAhv9SGn0O3hO+oLPkHiZ4y5FacrD3nPSJn5GptbrJ7+P+VnERa3VA6bWKFlFyC0NqdFUXOkqQqS06kwt1XhVIeNaZiqqSZeS0z4955jWwrBCuudSskvSRklSTDEXzznuaJ74l/m+rt4Wm3Zt8WxhcYAOU5Na7OuwJ3165RHTlKlhrfQFaZckXfH0ymOFhsNKaZX6POYSU7v2SZJ6XTz7aFJKbKfH9ZxuLLp9pIk5evaKM4ZMndXzrjOJ/7+V0Uv/rYKdZx9tOi8Jg3HqPY+kn66iGdt59jrMe/nnyX52V+mhVcsNFuchLWQqeH+vRB9xCBVeJC7xZhUQYTKstyBb+JNQ4JB3OJvfKhgJPggYEeEaz5ZCmpgI4H2+WD18Xdi2zG4uBbj8r5GxvtUs2+AE+wNCrCZHq/W7OBUlya4AEI9yjbeKnfL0VbrmiIgzyCelXnnJI/zBV3NYm6cZoaPcnVkW4yQXZtVpBp1keWVmxq7YpIsc2ys8nmbOc5k6u5zTLqtIkOQNn/eBer4hx4eY9nm3XbdwkTSfun67PEQ7R8ixh1rnKsPj/64WbdPrmtI5XdGAruqGrmu+IlquBj2hDXpGl/WdDumm2yBeEEky9KRe1Go16jFFFNVt3dSEUvpLfbqgae8B7gNdcvnkrRzZ4gAAAABJRU5ErkJggg==" />
-                            </svg>
-                        </div>
-                        <div class="cut-descriptions">
-                            <p>Fine Weaving, Standard Weaving, Suitable for all Skin Colours, Single Donor Hairs, Single & Double Drawn Hair Closure, Shedding & Tangle Free, No Split End, Eggs, Nits and Lice Free, Easy to Recolor or Dye.</p>
-                            <p>Texture: Natural Straight, Natural Wavy, Natural Curly, BW, DW, LW, WW, KC. KST</p>
-                            <p>Weight: 35-135 Grams/each</p>
-                            <span>LACE FRONTAL</span>
-                        </div>
-                    </div>
-                    <div class="single-cut">
-                        <div class="cut-icon mb-20">
-                            <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
-                                width="50px" height="50px">
-                                <image x="0px" y="0px" width="50px" height="50px"
-                                    xlink:href="data:img/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAQAAAC0NkA6AAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAAAmJLR0QA/4ePzL8AAAAHdElNRQfkBQ4MDDIERuyfAAADc0lEQVRYw7WYXWxTZRjH/+e0ikhh7QgfiYJZZ7bhBC6mU0LQ6DBADNGYLEaNJGpi4jTEQczYjQG8EL2ThAUTvTRGBwmECyBA+XRKHJpUL1yXFseWbe1ixgZCSAg/Lmo9bXe+up0+/5vT//Oc9/ee8z7nqwbyGbVqUL2iiuiurmtMKf2tu/52DXtW1OhVtekFRZTSkCY1rYcV0VI1arl+VULH9JvnGLhpHT/wD728z+M22QVs5ksyJOlkgds4zqlWEgzSQQ3uEzF4ju8ZpZsHK4NEOcgo7xL2AFhq4CgDtPmHPEWGg0R9AwrayjD77CY2s/RtsrRXDMhrCSc5wyIvyE6GaJ4lQogQB/idZW6QjxlkxRwQee0lWdoupec0a9uqlauHM8VrYyXqyLIuEIQIcYLPZ0JC/EJnQIh8C4xYDV0wO0hgBAgRm0kxrxhSS46mQBFCHKa7GLKbbwNHiCayRAqQCBMBdVW5etlRgGzjWFUQYgMDGHnIaZfbSIxTWNFP3MGzl0GaViQWMVXoAhv9SGn0O3hO+oLPkHiZ4y5FacrD3nPSJn5GptbrJ7+P+VnERa3VA6bWKFlFyC0NqdFUXOkqQqS06kwt1XhVIeNaZiqqSZeS0z4955jWwrBCuudSskvSRklSTDEXzznuaJ74l/m+rt4Wm3Zt8WxhcYAOU5Na7OuwJ3165RHTlKlhrfQFaZckXfH0ymOFhsNKaZX6POYSU7v2SZJ6XTz7aFJKbKfH9ZxuLLp9pIk5evaKM4ZMndXzrjOJ/7+V0Uv/rYKdZx9tOi8Jg3HqPY+kn66iGdt59jrMe/nnyX52V+mhVcsNFuchLWQqeH+vRB9xCBVeJC7xZhUQYTKstyBb+JNQ4JB3OJvfKhgJPggYEeEaz5ZCmpgI4H2+WD18Xdi2zG4uBbj8r5GxvtUs2+AE+wNCrCZHq/W7OBUlya4AEI9yjbeKnfL0VbrmiIgzyCelXnnJI/zBV3NYm6cZoaPcnVkW4yQXZtVpBp1keWVmxq7YpIsc2ys8nmbOc5k6u5zTLqtIkOQNn/eBer4hx4eY9nm3XbdwkTSfun67PEQ7R8ixh1rnKsPj/64WbdPrmtI5XdGAruqGrmu+IlquBj2hDXpGl/WdDumm2yBeEEky9KRe1Go16jFFFNVt3dSEUvpLfbqgae8B7gNdcvnkrRzZ4gAAAABJRU5ErkJggg==" />
-                            </svg>
-                        </div>
-                        <div class="cut-descriptions">
-                            <p>Single Donor Hairs, Single & Double Drawn Hair Extension, Shedding & Tangle Free, No Split End, Eggs, Nits and Lice Free, Easy to Recolor or Dye.</p>
-                            <p>Texture: Natural Straight, Natural Wavy, Natural Curly, BW, DW, LW, WW, KC. KST</p>
-                            <p>Weight: 25-140 Grams/each</p>
-                            <span>CLIP INS</span>
-                        </div>
-                    </div>
-                    <div class="single-cut">
-                        <div class="cut-icon mb-20">
-                            <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
-                                width="50px" height="50px">
-                                <image x="0px" y="0px" width="50px" height="50px"
-                                    xlink:href="data:img/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAQAAAC0NkA6AAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAAAmJLR0QA/4ePzL8AAAAHdElNRQfkBQ4MDDIERuyfAAADc0lEQVRYw7WYXWxTZRjH/+e0ikhh7QgfiYJZZ7bhBC6mU0LQ6DBADNGYLEaNJGpi4jTEQczYjQG8EL2ThAUTvTRGBwmECyBA+XRKHJpUL1yXFseWbe1ixgZCSAg/Lmo9bXe+up0+/5vT//Oc9/ee8z7nqwbyGbVqUL2iiuiurmtMKf2tu/52DXtW1OhVtekFRZTSkCY1rYcV0VI1arl+VULH9JvnGLhpHT/wD728z+M22QVs5ksyJOlkgds4zqlWEgzSQQ3uEzF4ju8ZpZsHK4NEOcgo7xL2AFhq4CgDtPmHPEWGg0R9AwrayjD77CY2s/RtsrRXDMhrCSc5wyIvyE6GaJ4lQogQB/idZW6QjxlkxRwQee0lWdoupec0a9uqlauHM8VrYyXqyLIuEIQIcYLPZ0JC/EJnQIh8C4xYDV0wO0hgBAgRm0kxrxhSS46mQBFCHKa7GLKbbwNHiCayRAqQCBMBdVW5etlRgGzjWFUQYgMDGHnIaZfbSIxTWNFP3MGzl0GaViQWMVXoAhv9SGn0O3hO+oLPkHiZ4y5FacrD3nPSJn5GptbrJ7+P+VnERa3VA6bWKFlFyC0NqdFUXOkqQqS06kwt1XhVIeNaZiqqSZeS0z4955jWwrBCuudSskvSRklSTDEXzznuaJ74l/m+rt4Wm3Zt8WxhcYAOU5Na7OuwJ3165RHTlKlhrfQFaZckXfH0ymOFhsNKaZX6POYSU7v2SZJ6XTz7aFJKbKfH9ZxuLLp9pIk5evaKM4ZMndXzrjOJ/7+V0Uv/rYKdZx9tOi8Jg3HqPY+kn66iGdt59jrMe/nnyX52V+mhVcsNFuchLWQqeH+vRB9xCBVeJC7xZhUQYTKstyBb+JNQ4JB3OJvfKhgJPggYEeEaz5ZCmpgI4H2+WD18Xdi2zG4uBbj8r5GxvtUs2+AE+wNCrCZHq/W7OBUlya4AEI9yjbeKnfL0VbrmiIgzyCelXnnJI/zBV3NYm6cZoaPcnVkW4yQXZtVpBp1keWVmxq7YpIsc2ys8nmbOc5k6u5zTLqtIkOQNn/eBer4hx4eY9nm3XbdwkTSfun67PEQ7R8ixh1rnKsPj/64WbdPrmtI5XdGAruqGrmu+IlquBj2hDXpGl/WdDumm2yBeEEky9KRe1Go16jFFFNVt3dSEUvpLfbqgae8B7gNdcvnkrRzZ4gAAAABJRU5ErkJggg==" />
-                            </svg>
-                        </div>
-                        <div class="cut-descriptions">
-                            <p>Fine Weaving, Standard Weaving, Suitable for all Skin Colours and Head Sizes (S,M,L), Single Donor Hairs, Single & Double Drawn Hair Volume Topper, Shedding & Tangle Free, No Split End, Eggs, Nits and Lice Free, Easy to Recolor or Dye.</p>
-                            <p>Texture: Natural Straight, Natural Wavy, Natural Curly, BW, DW, LW, WW, KC. KST</p>
-                            <p>Weight: 35-135 Grams/each</p>
-                            <span>SCALP TOPPER or CROWN TOPPER </span>
-                        </div>
+    </section>
+
+    <!-- Transformations Section -->
+    <section class="transformations">
+        <div class="container">
+            <h2 class="section-title">Hair Transformations</h2>
+            <div class="transformation-grid">
+                <div class="transformation-item">
+                    <div class="before-after" id="slider1">
+                        <img src="https://images.unsplash.com/photo-1508214751196-bcfd4ca60f91?w=600" alt="Before">
+                        <img src="https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?w=600" alt="After" class="after-image">
+                        <div class="slider-handle" draggable="true"></div>
                     </div>
                 </div>
+                <div class="transformation-item">
+                    <div class="before-after" id="slider2">
+                        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=600" alt="Before">
+                        <img src="https://images.unsplash.com/photo-1524504388940-b1c1722653e1?w=600" alt="After" class="after-image">
+                        <div class="slider-handle" draggable="true"></div>
+                    </div>
+                </div>
+                <div class="transformation-item">
+                    <div class="before-after" id="slider3">
+                        <img src="https://images.unsplash.com/photo-1488426862026-3ee34a7d66df?w=600" alt="Before">
+                        <img src="https://images.unsplash.com/photo-1502823403499-6ccfcf4fb453?w=600" alt="After" class="after-image">
+                        <div class="slider-handle" draggable="true"></div>
+                    </div>
+                </div>
+            </div>
+            <div style="text-align: center; margin-top: 40px;">
+                <a href="#" class="btn-primary">Book Your Trial</a>
             </div>
         </div>
-        <!-- Cut Details End -->
-        <!--? Blog Area Start -->
-        <section class="home-blog-area section-padding30">
-            <div class="container">
-                <!-- Section Tittle -->
-                <div class="row justify-content-center">
-                    <div class="col-xl-6 col-lg-7 col-md-10 col-sm-10">
-                        <div class="section-tittle text-center mb-90">
-                            <span>our recent news</span>
-                            <h2 class="h2style">Hipos and tricks from recent blog</h2>
-                        </div>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-xl-6 col-lg-6 col-md-6">
-                        <div class="home-blog-single mb-30">
-                            <div class="blog-img-cap">
-                                <div class="blog-img">
-                                    <img src="assets/img/gallery/SCALP TOPPER or CROWN TOPPER or FEMALE TOPPER.jpeg " class="rds">
-                                    <!-- Blog date -->
+    </section>
 
-                                </div>
-                                <div class="blog-cap">
-                                    <p>| Design</p>
-                                    <h3 class="h3style"><a href="blog_details.html">No Split End, Eggs, Nits and Lice Free, Easy to Recolor or Dye.</a>
-                                    </h3>
-
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-xl-6 col-lg-6 col-md-6">
-                        <div class="home-blog-single mb-30">
-                            <div class="blog-img-cap">
-                                <div class="blog-img">
-                                    <img src="assets/img/gallery/LACE CLOSURE - BODY WAVE (2).png" class="rds">
-                                    <!-- Blog date -->
-
-                                </div>
-                                <div class="blog-cap">
-                                    <p>| Design</p>
-                                    <h3 class="h3style"><a href="blog_details.html">Fine Weaving, Standard Weaving, Suitable for all Skin Colours and Head Sizes </a>
-                                    </h3>
-
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <!-- Blog Area End -->
-    </main>
+    <!-- Footer -->
     <footer>
-        <!--? Footer Start-->
-        <div class="footer-area section-bg" data-background="assets/img/gallery/footer_bg.png">
-            <div class="container">
-                <div class="footer-top footer-padding">
-                    <div class="row d-flex justify-content-between">
-                        <div class="col-xl-3 col-lg-4 col-md-5 col-sm-8">
-                            <div class="single-footer-caption mb-50">
-                                <!-- logo -->
-                                <div class="footer-logo">
-                                    <a href="index.html"><img src="assets/img/logo/JPG LOGO.jpg" alt="" style="width:100px; height: 79px;"></a>
-                                </div>
-                                <div class="footer-tittle">
-                                    <div class="footer-pera">
-                                        <p class="info1">Receive updates and latest news direct from Simply enter.</p>
-                                    </div>
-                                </div>
-                                <div class="footer-number">
-                                    <h4><span>+91 </span>63764 82804</h4>
-                                    <p>sumiteximjjn@gmail.com</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-xl-2 col-lg-2 col-md-3 col-sm-5">
-                            <div class="single-footer-caption mb-50">
-                                <div class="footer-tittle">
-                                    <h4>Support</h4>
-                                    <ul>
-                                        <li><a href="index.html">Home</a></li>
-                                        <li><a href="about.html">About</a></li>
-                                        <li><a href="Product.html">Product</a></li>
-                                        <li><a href="contact.html">Contact</a></li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="col-xl-4 col-lg-4 col-md-6 col-sm-8">
-                            <div class="single-footer-caption mb-50">
-                                <div class="footer-tittle">
-                                    <h4>Location</h4>
-                                    <div class="footer-pera">
-                                        <p class="info1">Swastik Tower, Joshiyo Ka Gatta, Ward No. 39, Jhunjhunu, Rajasthan - 333 001 (India).</p>
-                                    </div>
-                                </div>
-                                <!-- Form -->
-                                <div class="footer-form">
-                                    <div id="mc_embed_signup">
-                                        <form target="_blank" action="https://spondonit.us12.list-manage.com/subscribe/post?u=1462626880ade1ac87bd9c93a&amp;id=92a4423d01" method="get" class="subscribe_form relative mail_part" novalidate="true">
-                                            <input type="email" name="EMAIL" id="newsletter-form-email" placeholder=" Email Address " class="placeholder hide-on-focus" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Your email address'">
-                                            <div class="form-icon">
-                                                <button type="submit" name="submit" id="newsletter-submit" class="email_icon newsletter-submit button-contactForm">Send</button>
-                                            </div>
-                                            <div class="mt-10 info"></div>
-                                        </form>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="footer-bottom">
-                    <div class="row d-flex justify-content-between align-items-center">
-                        <div class="col-xl-9 col-lg-8">
-                            <div class="footer-copy-right">
-                                <p><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-  Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved  <i class="fa fa-heart" aria-hidden="true"></i> <a href="https://colorlib.com" target="_blank"></a>
-  <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></p>
-                            </div>
-                        </div>
-                        <div class="col-xl-3 col-lg-4">
-                            <!-- Footer Social -->
-                            <div class="footer-social f-right">
-                                <a href="https://www.instagram.com/deeceehair/" target="_blank"><i class="fab fa-instagram"></i></a>
-                                <a href="https://www.facebook.com/deeceehair/" target="_blank"><i class="fab fa-facebook-f"></i></a>
-                                <a href="https://www.youtube.com/channel/UCoe2HJjkd0bS59M7EGu5s9A" target="_blank"><i class="fab fa-youtube"></i></a>
-
-                            </div>
-                        </div>
-                    </div>
-                </div>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>About LuxeHair</h4>
+                <p>Premium quality hair extensions and patches for every style and occasion.</p>
+            </div>
+            <div class="footer-section">
+                <h4>Quick Links</h4>
+                <a href="#">Shop All</a>
+                <a href="#">New Arrivals</a>
+                <a href="#">Best Sellers</a>
+                <a href="#">Sale</a>
+            </div>
+            <div class="footer-section">
+                <h4>Customer Care</h4>
+                <a href="#">Contact Us</a>
+                <a href="#">Shipping Info</a>
+                <a href="#">Returns</a>
+                <a href="#">Size Guide</a>
+            </div>
+            <div class="footer-section">
+                <h4>Connect</h4>
+                <a href="#">Instagram</a>
+                <a href="#">Facebook</a>
+                <a href="#">YouTube</a>
+                <a href="#">Pinterest</a>
             </div>
         </div>
-        <!-- Footer End-->
+        <div class="footer-bottom">
+            <p>&copy; 2024 LuxeHair. All rights reserved.</p>
+        </div>
     </footer>
-    <!-- Scroll Up -->
-    <div id="back-top">
-        <a title="Go to Top" href="#"> <i class="fas fa-level-up-alt"></i></a>
-    </div>
 
-    <!-- JS here -->
+    <script>
+        // Mobile Menu Toggle
+        function toggleMenu() {
+            const navMenu = document.getElementById('nav-menu');
+            navMenu.classList.toggle('active');
+        }
 
-    <script src="./assets/js/vendor/modernizr-3.5.0.min.js"></script>
-    <!-- Jquery, Popper, Bootstrap -->
-    <script src="./assets/js/vendor/jquery-1.12.4.min.js"></script>
-    <script src="./assets/js/popper.min.js"></script>
-    <script src="./assets/js/bootstrap.min.js"></script>
-    <!-- Jquery Mobile Menu -->
-    <script src="./assets/js/jquery.slicknav.min.js"></script>
+        // Sticky Header on Scroll
+        let lastScroll = 0;
+        window.addEventListener('scroll', () => {
+            const header = document.getElementById('header');
+            const currentScroll = window.pageYOffset;
+            
+            if (currentScroll > 100) {
+                header.style.boxShadow = '0 2px 20px rgba(0,0,0,0.1)';
+            } else {
+                header.style.boxShadow = '0 2px 10px rgba(0,0,0,0.05)';
+            }
+            
+            lastScroll = currentScroll;
+        });
 
-    <!-- Jquery Slick , Owl-Carousel Plugins -->
-    <script src="./assets/js/owl.carousel.min.js"></script>
-    <script src="./assets/js/slick.min.js"></script>
-    <!-- One Page, Animated-HeadLin -->
-    <script src="./assets/js/wow.min.js"></script>
-    <script src="./assets/js/animated.headline.js"></script>
-    <script src="./assets/js/jquery.magnific-popup.js"></script>
+        // Smooth Scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
 
-    <!-- Date Picker -->
-    <script src="./assets/js/gijgo.min.js"></script>
-    <!-- Nice-select, sticky -->
-    <script src="./assets/js/jquery.nice-select.min.js"></script>
-    <script src="./assets/js/jquery.sticky.js"></script>
+        // Before/After Slider
+        document.querySelectorAll('.before-after').forEach(slider => {
+            const handle = slider.querySelector('.slider-handle');
+            const afterImage = slider.querySelector('.after-image');
+            let isDragging = false;
+            
+            const startDrag = (e) => {
+                isDragging = true;
+                e.preventDefault();
+            };
+            
+            const endDrag = () => {
+                isDragging = false;
+            };
+            
+            const drag = (e) => {
+                if (!isDragging) return;
+                
+                const rect = slider.getBoundingClientRect();
+                const x = e.type.includes('mouse') ? e.clientX : e.touches[0].clientX;
+                let percentage = ((x - rect.left) / rect.width) * 100;
+                
+                percentage = Math.max(0, Math.min(100, percentage));
+                
+                handle.style.left = percentage + '%';
+                afterImage.style.clipPath = `inset(0 0 0 ${percentage}%)`;
+            };
+            
+            handle.addEventListener('mousedown', startDrag);
+            handle.addEventListener('touchstart', startDrag);
+            
+            window.addEventListener('mouseup', endDrag);
+            window.addEventListener('touchend', endDrag);
+            
+            slider.addEventListener('mousemove', drag);
+            slider.addEventListener('touchmove', drag);
+        });
 
-    <!-- counter , waypoint,Hover Direction -->
-    <script src="./assets/js/jquery.counterup.min.js"></script>
-    <script src="./assets/js/waypoints.min.js"></script>
-    <script src="./assets/js/jquery.countdown.min.js"></script>
-    <script src="./assets/js/hover-direction-snake.min.js"></script>
+        // Option Button Selection
+        document.querySelectorAll('.option-buttons').forEach(group => {
+            const buttons = group.querySelectorAll('.option-btn');
+            buttons.forEach(btn => {
+                btn.addEventListener('click', () => {
+                    buttons.forEach(b => b.classList.remove('active'));
+                    btn.classList.add('active');
+                });
+            });
+        });
 
-    <!-- contact js -->
-    <script src="./assets/js/contact.js"></script>
-    <script src="./assets/js/jquery.form.js"></script>
-    <script src="./assets/js/jquery.validate.min.js"></script>
-    <script src="./assets/js/mail-script.js"></script>
-    <script src="./assets/js/jquery.ajaxchimp.min.js"></script>
+        // Lazy Loading for Images
+        if ('IntersectionObserver' in window) {
+            const imageObserver = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const img = entry.target;
+                        img.src = img.dataset.src || img.src;
+                        img.classList.add('fade-in');
+                        imageObserver.unobserve(img);
+                    }
+                });
+            });
 
-    <!-- Jquery Plugins, main Jquery -->
-    <script src="./assets/js/plugins.js"></script>
-    <script src="./assets/js/main.js"></script>
+            document.querySelectorAll('img[loading="lazy"]').forEach(img => {
+                imageObserver.observe(img);
+            });
+        }
 
+        // Animation on Scroll
+        const animateOnScroll = () => {
+            const elements = document.querySelectorAll('.product-card, .transformation-item');
+            
+            elements.forEach(element => {
+                const elementTop = element.getBoundingClientRect().top;
+                const elementBottom = element.getBoundingClientRect().bottom;
+                
+                if (elementTop < window.innerHeight && elementBottom > 0) {
+                    element.style.opacity = '1';
+                    element.style.transform = 'translateY(0)';
+                }
+            });
+        };
+
+        window.addEventListener('scroll', animateOnScroll);
+        animateOnScroll();
+
+        // Initialize animations for product cards
+        document.querySelectorAll('.product-card').forEach((card, index) => {
+            card.style.opacity = '0';
+            card.style.transform = 'translateY(20px)';
+            card.style.transition = `all 0.5s ease ${index * 0.1}s`;
+        });
+
+        // Video Carousel Touch/Swipe Support
+        const carousel = document.getElementById('videoCarousel');
+        let isDown = false;
+        let startX;
+        let scrollLeft;
+
+        carousel.addEventListener('mousedown', (e) => {
+            isDown = true;
+            startX = e.pageX - carousel.offsetLeft;
+            scrollLeft = carousel.scrollLeft;
+        });
+
+        carousel.addEventListener('mouseleave', () => {
+            isDown = false;
+        });
+
+        carousel.addEventListener('mouseup', () => {
+            isDown = false;
+        });
+
+        carousel.addEventListener('mousemove', (e) => {
+            if (!isDown) return;
+            e.preventDefault();
+            const x = e.pageX - carousel.offsetLeft;
+            const walk = (x - startX) * 2;
+            carousel.scrollLeft = scrollLeft - walk;
+        });
+    </script>
 </body>
-
 </html>
