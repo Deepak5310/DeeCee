@@ -6,7 +6,7 @@
     <meta name="description" content="Premium Hair Extensions & Hair Patches - Transform your look with our luxury collection of natural hair extensions, patches, and accessories.">
     <meta name="keywords" content="hair extensions, hair patches, clip-ins, premium hair, hair transformation">
     <title>LuxeHair - Premium Hair Extensions & Patches</title>
-    
+
     <style>
         * {
             margin: 0;
@@ -710,9 +710,9 @@
         <div class="header-container">
             <a href="#" class="logo">
                 <div class="logo-icon">✨</div>
-                LuxeHair
+                DeeCee Hair
             </a>
-            
+
             <nav>
                 <ul id="nav-menu">
                     <li class="dropdown">
@@ -759,7 +759,7 @@
     <!-- Hero Section -->
     <section class="hero">
         <video class="hero-video" autoplay loop muted playsinline>
-            <source src="https://cdn.coverr.co/videos/coverr-woman-with-long-hair-5916/1080p.mp4" type="video/mp4">
+            <source src="https://www.nishhair.com/cdn/shop/videos/c/vp/c5e2b2c54d5a4ba8a0ef623f7c6ee7a0/c5e2b2c54d5a4ba8a0ef623f7c6ee7a0.HD-1080p-2.5Mbps-13025973.mp4" type="video/mp4">
         </video>
         <div class="hero-overlay"></div>
         <div class="hero-content">
@@ -777,13 +777,13 @@
                 <!-- Video Items -->
                 <div class="video-item">
                     <video autoplay loop muted playsinline>
-                        <source src="https://cdn.coverr.co/videos/coverr-woman-with-curly-hair-7641/1080p.mp4" type="video/mp4">
+                        <source src="https://cdn.shopify.com/s/files/1/0688/3370/6274/files/whatmore_tn_4f1267bc-fd3f-40ed-9efd-3a9239a561f9.mp4" type="video/mp4">
                     </video>
                     <div class="video-caption">Curly Extensions</div>
                 </div>
                 <div class="video-item">
                     <video autoplay loop muted playsinline>
-                        <source src="https://cdn.coverr.co/videos/coverr-woman-with-straight-hair-2834/1080p.mp4" type="video/mp4">
+                        <source src="https://cdn.shopify.com/s/files/1/0688/3370/6274/files/whatmore_tn_895ceb0b-31a2-42b2-a49e-45503a13f24c.mp4" type="video/mp4">
                     </video>
                     <div class="video-caption">Straight Silk</div>
                 </div>
@@ -884,7 +884,7 @@
                     <h3>Luxury Remy Hair Extensions</h3>
                     <p class="featured-price">₹15,999</p>
                     <p>Experience the ultimate in hair luxury with our 100% Remy human hair extensions. Silky smooth, tangle-free, and available in multiple shades.</p>
-                    
+
                     <div class="options">
                         <label>Select Length:</label>
                         <div class="option-buttons">
@@ -894,7 +894,7 @@
                             <button class="option-btn">22"</button>
                         </div>
                     </div>
-                    
+
                     <div class="options">
                         <label>Select Weight:</label>
                         <div class="option-buttons">
@@ -903,7 +903,7 @@
                             <button class="option-btn">200g</button>
                         </div>
                     </div>
-                    
+
                     <div class="featured-actions">
                         <a href="#" class="btn-primary">Add to Cart</a>
                         <a href="#" class="btn-secondary">View Details</a>
@@ -950,7 +950,7 @@
     <footer>
         <div class="footer-content">
             <div class="footer-section">
-                <h4>About LuxeHair</h4>
+                <h4>About DeeCee Hair</h4>
                 <p>Premium quality hair extensions and patches for every style and occasion.</p>
             </div>
             <div class="footer-section">
@@ -992,13 +992,13 @@
         window.addEventListener('scroll', () => {
             const header = document.getElementById('header');
             const currentScroll = window.pageYOffset;
-            
+
             if (currentScroll > 100) {
                 header.style.boxShadow = '0 2px 20px rgba(0,0,0,0.1)';
             } else {
                 header.style.boxShadow = '0 2px 10px rgba(0,0,0,0.05)';
             }
-            
+
             lastScroll = currentScroll;
         });
 
@@ -1021,35 +1021,35 @@
             const handle = slider.querySelector('.slider-handle');
             const afterImage = slider.querySelector('.after-image');
             let isDragging = false;
-            
+
             const startDrag = (e) => {
                 isDragging = true;
                 e.preventDefault();
             };
-            
+
             const endDrag = () => {
                 isDragging = false;
             };
-            
+
             const drag = (e) => {
                 if (!isDragging) return;
-                
+
                 const rect = slider.getBoundingClientRect();
                 const x = e.type.includes('mouse') ? e.clientX : e.touches[0].clientX;
                 let percentage = ((x - rect.left) / rect.width) * 100;
-                
+
                 percentage = Math.max(0, Math.min(100, percentage));
-                
+
                 handle.style.left = percentage + '%';
                 afterImage.style.clipPath = `inset(0 0 0 ${percentage}%)`;
             };
-            
+
             handle.addEventListener('mousedown', startDrag);
             handle.addEventListener('touchstart', startDrag);
-            
+
             window.addEventListener('mouseup', endDrag);
             window.addEventListener('touchend', endDrag);
-            
+
             slider.addEventListener('mousemove', drag);
             slider.addEventListener('touchmove', drag);
         });
@@ -1086,11 +1086,11 @@
         // Animation on Scroll
         const animateOnScroll = () => {
             const elements = document.querySelectorAll('.product-card, .transformation-item');
-            
+
             elements.forEach(element => {
                 const elementTop = element.getBoundingClientRect().top;
                 const elementBottom = element.getBoundingClientRect().bottom;
-                
+
                 if (elementTop < window.innerHeight && elementBottom > 0) {
                     element.style.opacity = '1';
                     element.style.transform = 'translateY(0)';
